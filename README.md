@@ -6,6 +6,8 @@ A console-based application designed to manage library operations efficiently.
 * View available books
 * Borrow and return books
 * Manage user profiles
+* Catalog & book management
+* Technical Higlights
 
 #  How to Run the Application
 1. Download or clone this repository.
