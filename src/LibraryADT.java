@@ -1,17 +1,16 @@
 public interface LibraryADT {
-    interface LibraryADT {
-        // Any class implementing this MUST have all 4 of these methods
+    // Adds a new book to the catalogue system
+    void addBook(int isbn, String title, String author);
 
-        void addBook(int isbn, String title, String author);
-        // Adds a new book to the catalogue
+    // Traverses the BST recursively to find a book details
+    void searchBook(int isbn);
 
-        void searchBook(int isbn);
-        // Finds and displays a book by ISBN
+    // Processes a checkout, shifting records to the tracker
+    void borrowBook(int isbn);
 
-        void borrowBook(int isbn);
-        // Moves a book from catalogue to borrowing history
+    // Displays actions in LIFO order
+    void viewLatestHistory();
 
-        void viewLatestHistory();
-        // Displays borrowing history in LIFO order
-    }
+    // Extension: Processes return and assesses overdue fines
+    void returnBook(int isbn, int daysBorrowed);
 }
