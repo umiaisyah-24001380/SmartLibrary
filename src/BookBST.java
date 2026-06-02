@@ -1,19 +1,42 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
 
-/**
- *
- * @author nadhirahrahim
- */
+
+
 public class BookBST {
 
-    /**
-     * @param args the command line arguments
-     */
-    
     private Book root;
+
+
+    /**
+     * TASK 1: CATALOGUE ARCHITECT
+     * Public wrapper method to add a new book into the tree structure
+     * @param isbn
+     * @param title
+     */
+
+    public void insert(int isbn, String title, String author){
+        root = ins(root, isbn, title, author);
+    }
+
+    /**
+     * Helper method to execute recursive binary tree placement
+     */
+    private Book ins(Book r, int i, String t, String a){
+        // BASE CASE: If find a null spot, insert the new book node here
+        if (r == null){
+            return new Book(i, t, a);
+        }
+        // RECURSIVE CASE 1: Incoming ISBN is smaller, navigate left
+        if (i < r.isbn){
+            r.left = ins(r.left, i, t, a);
+        }
+        // RECURSIVE CASE 2: Incoming ISBN is larger, navigate right
+        else if (i > r.isbn){
+            r.right = inst(r.right, i, t, a);
+        }
+
+        // return the unchanged node pointer to preserve the tree links
+        return r;
+    }
 
     /**
      * TASK 3: RECORD FINDER
@@ -21,7 +44,8 @@ public class BookBST {
      * Time Complexity: O(log n)
      */
     public Book search(int i) {
-        return see(root, i); 
+
+        return see(root, i);
     }
 
     /**
