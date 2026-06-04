@@ -6,5 +6,5 @@ public interface LibraryADT {
     void searchBook (int isbn); // Search the book by ISBN using BST
     void borrowBook (int isbn); // Borrow a book and move record to history stack (LIFO)
     void viewLatestHistory (); // Display all borrowed books in LIFO order
-    
+    void returnBook (int isbn , int daysBorrowed); //Process return and assesses overdue fines
 }
