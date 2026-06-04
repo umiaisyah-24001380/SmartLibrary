@@ -1,5 +1,4 @@
 package smartlibrary;
-
 import java.util.Scanner;
 
 public class SmartLibrary implements LibraryADT {
