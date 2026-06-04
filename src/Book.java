@@ -1,5 +1,4 @@
 package smartlibrary;
-
 public class Book {
     
     int isbn;
