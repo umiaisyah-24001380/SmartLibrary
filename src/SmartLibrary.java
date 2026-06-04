@@ -1,3 +1,5 @@
+package smartlibrary;
+
 import java.util.Scanner;
 
 public class SmartLibrary implements LibraryADT {
@@ -51,8 +53,17 @@ public class SmartLibrary implements LibraryADT {
             return;
         }
 
-        // Simulates retrieving the record matching item from history stack
+        // Pop the topmost item to evaluate it
         Book b = history.pop();
+
+        // LIFO Verification: Ensure the book is actually what the user is trying to return
+        if (b.isbn != isbn) {
+            System.out.println("Error: Transaction rejected.");
+            System.out.println("According to strict LIFO rules, you must return your most recent checkout first (\"" + b.title + "\").");
+            history.push(b); // Put it safely back on top of the stack
+            return;
+        }
+
         System.out.println("Processing return for: \"" + b.title + "\"");
 
         if (daysBorrowed > MAX_BORROW_DAYS) {
@@ -139,7 +150,7 @@ public class SmartLibrary implements LibraryADT {
         }
     }
 
-    // Rubric Focus: Gracefully catches strings/characters when integers are required
+    // catches strings/characters when integers are required
     private int readSafeInteger(Scanner sc) {
         while (!sc.hasNextInt()) {
             System.out.println("Type mismatch format! Input an integer code numeric only.");

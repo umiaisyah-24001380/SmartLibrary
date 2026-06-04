@@ -1,6 +1,4 @@
-
-
-
+package smartlibrary;
 public class BookBST {
 
     private Book root;
@@ -31,7 +29,7 @@ public class BookBST {
         }
         // RECURSIVE CASE 2: Incoming ISBN is larger, navigate right
         else if (i > r.isbn){
-            r.right = inst(r.right, i, t, a);
+            r.right = ins(r.right, i, t, a);
         }
 
         // return the unchanged node pointer to preserve the tree links
