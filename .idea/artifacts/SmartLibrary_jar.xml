@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SmartLibrary:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SmartLibrary_jar</output-path>
+    <root id="archive" name="SmartLibrary.jar">
+      <element id="module-output" name="SmartLibrary" />
+    </root>
+  </artifact>
+</component>
